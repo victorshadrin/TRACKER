@@ -15,7 +15,7 @@ typedef enum
 }ButtonMode_TypeDef;
 
 void  PowerButton_Init(ButtonMode_TypeDef ButtonMode);
-void PowerButton__DeInit();
+void PowerButton_DeInit();
 
 
 #endif

@@ -92,6 +92,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
 	
 	printf("After init peripherals\n");
+	
+	
 
   /* USER CODE END 2 */
 

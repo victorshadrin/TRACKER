@@ -32,7 +32,7 @@ void PowerButton_Init(ButtonMode_TypeDef ButtonMode)
   }
 }
 
-void PowerButton__DeInit()
+void PowerButton_DeInit()
 {
     GPIO_InitTypeDef gpio_init_structure;
 

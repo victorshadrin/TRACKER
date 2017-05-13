@@ -377,9 +377,6 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>::CMSIS</GroupName>
-        </Group>
-        <Group>
           <GroupName>Drivers/STM32F3xx_HAL_Driver</GroupName>
           <Files>
             <File>
@@ -507,6 +504,16 @@
               <FileType>1</FileType>
               <FilePath>..\Src\power_button.c</FilePath>
             </File>
+            <File>
+              <FileName>program.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Src\program.h</FilePath>
+            </File>
+            <File>
+              <FileName>program.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\program.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -518,6 +525,9 @@
               <FilePath>startup_stm32f302xc.s</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
     </Target>
