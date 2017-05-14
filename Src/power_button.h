@@ -18,6 +18,9 @@ typedef enum
 
 void PowerButton_Init(ButtonMode_TypeDef ButtonMode);
 void PowerButton_DeInit(void);
-int PowerButton_check(void);
+void PowerButton_reset(void);
+
+int PowerButton_pressed(uint32_t time);
+int PowerButton_released(void);
 
 #endif

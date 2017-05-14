@@ -15,8 +15,10 @@ extern UART_HandleTypeDef huart2;
 #define MEMORY_I2C &hi2c1
 
 typedef enum {
-	PROGRAM_RUNNING,
-	PROGRAM_AWAKENED
+	STATE_SLEEPING,
+	STATE_RUNNING,
+	STATE_AWAKENING,
+	STATE_AWAKENED
 } ProgramState;
 
 void program_setup(void);

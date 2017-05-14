@@ -4,9 +4,14 @@
 int64_t buttonPressed;
 int64_t buttonReleased;
 
+void PowerButton_reset() { 
+	buttonReleased = HAL_GetTick();
+	buttonPressed = HAL_GetTick();
+}
+
 void PowerButton_Init(ButtonMode_TypeDef ButtonMode) { 
 	buttonReleased = HAL_GetTick();
-	buttonPressed = 0;
+	buttonPressed = HAL_GetTick();
 	
   GPIO_InitTypeDef GPIO_InitStruct;
   
@@ -42,11 +47,15 @@ void PowerButton_DeInit() {
     HAL_GPIO_DeInit(BUTTON_PORT, gpio_init_structure.Pin);
 }
 
-int PowerButton_check() {
+int PowerButton_released() {
+	return HAL_GPIO_ReadPin(BUTTON_PORT, BUTTON_PIN);
+}
+
+int PowerButton_pressed(uint32_t time) {
 	if(HAL_GPIO_ReadPin(BUTTON_PORT, BUTTON_PIN) ) { 
 		buttonReleased = HAL_GetTick(); 
 	} else { 
 		buttonPressed = HAL_GetTick();
 	}	
-	return (buttonPressed - buttonReleased) > BUTTON_DELAY;
+	return (buttonPressed - buttonReleased) > time;
 }
