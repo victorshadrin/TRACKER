@@ -43,6 +43,11 @@
 
 /* USER CODE BEGIN Private defines */
 
+void  MAIN_GPIO_Init(void);
+void  MAIN_USART2_UART_Init(void);
+void  MAIN_I2C1_Init(void);
+void  MAIN_USART1_UART_Init(void);
+
 /* USER CODE END Private defines */
 
 /**

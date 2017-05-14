@@ -4,7 +4,24 @@
 #define __PROGRAM_H
 
 #include "main.h"
+#include "power_button.h"
 
+extern I2C_HandleTypeDef hi2c1;
+extern UART_HandleTypeDef huart1;
+extern UART_HandleTypeDef huart2;
+
+#define GPS_UART &huart1
+#define CMD_UART &huart2
+#define MEMORY_I2C &hi2c1
+
+typedef enum {
+	PROGRAM_RUNNING,
+	PROGRAM_AWAKENED
+} ProgramState;
+
+void program_setup(void);
+void program_loop(void);
+void program_sleep(void);
 
 
 

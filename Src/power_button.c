@@ -1,15 +1,19 @@
 
 #include "power_button.h"
 
-void PowerButton_Init(ButtonMode_TypeDef ButtonMode)
-{ 
+int64_t buttonPressed;
+int64_t buttonReleased;
+
+void PowerButton_Init(ButtonMode_TypeDef ButtonMode) { 
+	buttonReleased = HAL_GetTick();
+	buttonPressed = 0;
+	
   GPIO_InitTypeDef GPIO_InitStruct;
   
   /* Enable the BUTTON Clock */
 	__HAL_RCC_GPIOC_CLK_ENABLE();
   
-  if(ButtonMode == BUTTON_MODE_GPIO)
-  {
+  if(ButtonMode == BUTTON_MODE_GPIO) {
     /* Configure Button pin as input */
     GPIO_InitStruct.Pin = BUTTON_PIN;
     GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
@@ -18,8 +22,7 @@ void PowerButton_Init(ButtonMode_TypeDef ButtonMode)
     HAL_GPIO_Init(BUTTON_PORT, &GPIO_InitStruct);
   }
   
-  if(ButtonMode == BUTTON_MODE_EXTI)
-  {
+  if(ButtonMode == BUTTON_MODE_EXTI) {
     /* Configure Button pin as input with External interrupt */
     GPIO_InitStruct.Pin = BUTTON_PIN;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
@@ -32,11 +35,18 @@ void PowerButton_Init(ButtonMode_TypeDef ButtonMode)
   }
 }
 
-void PowerButton_DeInit()
-{
+void PowerButton_DeInit() {
     GPIO_InitTypeDef gpio_init_structure;
-
     gpio_init_structure.Pin = BUTTON_PIN;
     HAL_NVIC_DisableIRQ((IRQn_Type)(EXTI15_10_IRQn));
     HAL_GPIO_DeInit(BUTTON_PORT, gpio_init_structure.Pin);
+}
+
+int PowerButton_check() {
+	if(HAL_GPIO_ReadPin(BUTTON_PORT, BUTTON_PIN) ) { 
+		buttonReleased = HAL_GetTick(); 
+	} else { 
+		buttonPressed = HAL_GetTick();
+	}	
+	return (buttonPressed - buttonReleased) > BUTTON_DELAY;
 }

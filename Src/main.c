@@ -37,6 +37,7 @@
 /* USER CODE BEGIN Includes */
 
 #include "uart_printf.h"
+#include "program.h"
 
 /* USER CODE END Includes */
 
@@ -66,6 +67,22 @@ static void MX_USART1_UART_Init(void);
 
 /* USER CODE BEGIN 0 */
 
+void  MAIN_GPIO_Init(void) {
+	MX_GPIO_Init();
+}
+
+void MAIN_USART2_UART_Init(void) {
+	MX_USART2_UART_Init();
+}
+
+void  MAIN_I2C1_Init(void) {
+	MX_I2C1_Init();
+}
+
+void  MAIN_USART1_UART_Init(void) {
+	MX_USART1_UART_Init();
+}
+
 /* USER CODE END 0 */
 
 int main(void)
@@ -93,7 +110,7 @@ int main(void)
 	
 	printf("After init peripherals\n");
 	
-	
+	program_setup();
 
   /* USER CODE END 2 */
 
@@ -101,7 +118,10 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-  /* USER CODE END WHILE */
+		
+		program_loop();
+		
+  /* USER CODE END WHILE */		
 
   /* USER CODE BEGIN 3 */
 

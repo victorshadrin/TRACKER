@@ -19,6 +19,9 @@
 "tracker\stm32f3xx_hal_msp.o"
 "tracker\main.o"
 "tracker\stm32f3xx_it.o"
+"tracker\power_button.o"
+"tracker\program.o"
+"tracker\sleepmode.o"
 "tracker\startup_stm32f302xc.o"
 --library_type=microlib --strict --scatter "TRACKER\TRACKER.sct"
 --diag_suppress=L6329 --summary_stderr --info summarysizes --map --xref --callgraph --symbols

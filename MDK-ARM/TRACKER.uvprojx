@@ -514,6 +514,21 @@
               <FileType>1</FileType>
               <FilePath>..\Src\program.c</FilePath>
             </File>
+            <File>
+              <FileName>sleepmode.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Src\sleepmode.h</FilePath>
+            </File>
+            <File>
+              <FileName>sleepmode.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\sleepmode.c</FilePath>
+            </File>
+            <File>
+              <FileName>main.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Inc\main.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

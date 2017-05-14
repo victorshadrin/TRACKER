@@ -31,3 +31,5 @@ tracker\main.o: ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr_ex.h
 tracker\main.o: ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h
 tracker\main.o: ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h
 tracker\main.o: ../Src/uart_printf.h
+tracker\main.o: ../Src/program.h
+tracker\main.o: ../Src/power_button.h
