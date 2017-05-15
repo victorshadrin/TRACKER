@@ -4,7 +4,6 @@
 
 void SleepMode_enter(void)
 {
-
 	
 	  GPIO_InitTypeDef GPIO_InitStruct;
 	

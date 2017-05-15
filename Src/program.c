@@ -3,30 +3,32 @@
 #include "sleepmode.h"
 #include "main.h"
 #include "eeprom.h"
-#include "tinygps.h"
+//#include "tinygps.h"
 
 
-#define INIT_ALL() 	MAIN_GPIO_Init(); MAIN_USART2_UART_Init();MAIN_I2C1_Init();MAIN_USART1_UART_Init();	
+#define INIT_ALL() MAIN_USART2_UART_Init();MAIN_I2C1_Init();MAIN_USART1_UART_Init();	
 #define DEINIT_ALL() HAL_UART_DeInit(CMD_UART);	HAL_UART_DeInit(GPS_UART);	HAL_I2C_DeInit(MEMORY_I2C);;	
+#define LED_SIGNAL() int counter = 0; \
+										while (counter++ < 4) { \
+											HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_SET); \
+											HAL_Delay(100); \
+											HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_RESET); \
+											HAL_Delay(100); \
+										}
 
 __IO ProgramState programState = STATE_SLEEPING;
 
 
 void program_setup() {	
-	__HAL_RCC_PWR_CLK_ENABLE();
-	int counter = 0;
-	while (counter++ < 4) {
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_SET);
-		HAL_Delay(100);
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_RESET);
-		HAL_Delay(100);
-	}
+	__HAL_RCC_PWR_CLK_ENABLE();	
 }
 
 void program_loop() {
 	if (programState == STATE_SLEEPING) {
 		program_sleep();
 	} else if (programState == STATE_AWAKENING) {
+		MAIN_GPIO_Init();
+	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_SET);
 		if (PowerButton_released()) {
 			programState = STATE_SLEEPING;
 		} else if (PowerButton_pressed(BUTTON_DELAY)) {
@@ -41,6 +43,7 @@ void program_loop() {
 		programState = STATE_RUNNING;
 	} else if (PowerButton_pressed(BUTTON_DELAY)) {
 		programState = STATE_SLEEPING;
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_RESET);
 	}	
 }
 
@@ -54,10 +57,11 @@ void power_off(void) {
 
 
 void program_sleep() {	
+	LED_SIGNAL();
 	printf("Entering sleep mode\n");	
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_RESET);
 	power_off();
-	DEINIT_ALL();	
+	DEINIT_ALL();
+	PowerButton_DeInit();	
 	SleepMode_enter();	
 }
 
