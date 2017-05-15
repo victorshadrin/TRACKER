@@ -2,6 +2,9 @@
 #include "program.h"
 #include "sleepmode.h"
 #include "main.h"
+#include "eeprom.h"
+#include "tinygps.h"
+
 
 #define INIT_ALL() 	MAIN_GPIO_Init(); MAIN_USART2_UART_Init();MAIN_I2C1_Init();MAIN_USART1_UART_Init();	
 #define DEINIT_ALL() HAL_UART_DeInit(CMD_UART);	HAL_UART_DeInit(GPS_UART);	HAL_I2C_DeInit(MEMORY_I2C);;	
@@ -33,6 +36,7 @@ void program_loop() {
 	} else if (programState == STATE_AWAKENED) {
 		INIT_ALL();
 		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_SET);
+		power_on();
 		printf("Entered run mode\n");
 		programState = STATE_RUNNING;
 	} else if (PowerButton_pressed(BUTTON_DELAY)) {
@@ -40,9 +44,19 @@ void program_loop() {
 	}	
 }
 
+void power_on(void) {
+	HAL_GPIO_WritePin(POWER_PORT, POWER_PIN, GPIO_PIN_SET);
+}
+
+void power_off(void) {
+	HAL_GPIO_WritePin(POWER_PORT, POWER_PIN, GPIO_PIN_RESET);
+}
+
+
 void program_sleep() {	
 	printf("Entering sleep mode\n");	
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_RESET);
+	power_off();
 	DEINIT_ALL();	
 	SleepMode_enter();	
 }
