@@ -26,20 +26,20 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #include <stdlib.h>
 
 #ifndef M_PI
-#define M_PI       3.14159265358979323846264338328      // Pi 
+#define M_PI       3.14159265358979323846264338328f      // Pi 
 #endif
 
 
 #define TWO_PI M_PI*2
 #define sq(n) (n*n)
-#define radians(angleDegrees) (angleDegrees * M_PI / 180.0)
-#define degrees(angleRadians) (angleRadians * 180.0 / M_PI)
+#define radians(angleDegrees) (angleDegrees * M_PI / 180.0f)
+#define degrees(angleRadians) (angleRadians * 180.0f / M_PI)
 
 unsigned long int millis() {return 0;}
 
-const float GPS_INVALID_F_ANGLE = 1000.0;
-const float GPS_INVALID_F_ALTITUDE = 1000000.0;
-const float GPS_INVALID_F_SPEED = -1.0;
+const float GPS_INVALID_F_ANGLE = 1000.0f;
+const float GPS_INVALID_F_ALTITUDE = 1000000.0f;
+const float GPS_INVALID_F_SPEED = -1.0f;
 
 enum {_GPS_SENTENCE_GPGGA, _GPS_SENTENCE_GPRMC, _GPS_SENTENCE_OTHER};
 
@@ -76,9 +76,9 @@ enum {_GPS_SENTENCE_GPGGA, _GPS_SENTENCE_GPRMC, _GPS_SENTENCE_OTHER};
 
   // internal utilities
   int from_hex(char a);
-  unsigned long parse_decimal();
-  unsigned long parse_degrees();
-  bool term_complete();
+  unsigned long parse_decimal(void);
+  unsigned long parse_degrees(void);
+  bool term_complete(void);
   bool gpsisdigit(char c) { return c >= '0' && c <= '9'; }
   long gpsatol(const char *str);
   int gpsstrcmp(const char *str1, const char *str2);
@@ -86,7 +86,7 @@ enum {_GPS_SENTENCE_GPGGA, _GPS_SENTENCE_GPRMC, _GPS_SENTENCE_OTHER};
 #define _GPRMC_TERM   "GPRMC"
 #define _GPGGA_TERM   "GPGGA"
 
-void TinyGPS()
+void tinygps_init()
 {
   _time = GPS_INVALID_TIME;
   _date = GPS_INVALID_DATE;
@@ -112,7 +112,7 @@ void TinyGPS()
 // public methods
 //
 
-bool encode(char c)
+bool tinygps_encode(char c)
 {
   bool valid_sentence = false;
 
@@ -339,7 +339,7 @@ int gpsstrcmp(const char *str1, const char *str2)
 }
 
 /* static */
-float distance_between (float lat1, float long1, float lat2, float long2) 
+float tinygps_distance_between (float lat1, float long1, float lat2, float long2) 
 {
   // returns distance in meters between two positions, both specified 
   // as signed decimal-degrees latitude and longitude. Uses great-circle 
@@ -364,20 +364,20 @@ float distance_between (float lat1, float long1, float lat2, float long2)
   return delta * 6372795; 
 }
 
-float course_to (float lat1, float long1, float lat2, float long2) 
+float tinygps_course_to (float lat1, float long1, float lat2, float long2) 
 {
   // returns course in degrees (North=0, West=270) from position 1 to position 2,
   // both specified as signed decimal-degrees latitude and longitude.
   // Because Earth is no exact sphere, calculated course may be off by a tiny fraction.
   // Courtesy of Maarten Lamers
-  float dlon = radians(long2-long1);
-  lat1 = radians(lat1);
-  lat2 = radians(lat2);
+  float dlon = (float)radians(long2-long1);
+  lat1 = (float)radians(lat1);
+  lat2 = (float)radians(lat2);
   float a1 = sin(dlon) * cos(lat2);
   float a2 = sin(lat1) * cos(lat2) * cos(dlon);
   a2 = cos(lat1) * sin(lat2) - a2;
   a2 = atan2(a1, a2);
-  if (a2 < 0.0)
+  if (a2 < 0.0f)
   {
     a2 += TWO_PI;
   }
@@ -387,7 +387,7 @@ float course_to (float lat1, float long1, float lat2, float long2)
 
 // lat/long in MILLIONTHs of a degree and age of fix in milliseconds
 // (note: versions 12 and earlier gave this value in 100,000ths of a degree.
-void get_position(long *latitude, long *longitude, unsigned long *fix_age)
+void tinygps_get_position(long *latitude, long *longitude, unsigned long *fix_age)
 {
   if (latitude) *latitude = _latitude;
   if (longitude) *longitude = _longitude;
@@ -396,7 +396,7 @@ void get_position(long *latitude, long *longitude, unsigned long *fix_age)
 }
 
 // date as ddmmyy, time as hhmmsscc, and age in milliseconds
-void get_datetime(unsigned long *date, unsigned long *time, unsigned long *age)
+void tinygps_get_datetime(unsigned long *date, unsigned long *time, unsigned long *age)
 {
   if (date) *date = _date;
   if (time) *time = _time;
@@ -404,19 +404,19 @@ void get_datetime(unsigned long *date, unsigned long *time, unsigned long *age)
    GPS_INVALID_AGE : millis() - _last_time_fix;
 }
 
-void f_get_position(float *latitude, float *longitude, unsigned long *fix_age)
+void tinygps_f_get_position(float *latitude, float *longitude, unsigned long *fix_age)
 {
   long lat, lon;
-  get_position(&lat, &lon, fix_age);
+  tinygps_get_position(&lat, &lon, fix_age);
   *latitude = lat == GPS_INVALID_ANGLE ? GPS_INVALID_F_ANGLE : (lat / 1000000.0);
   *longitude = lat == GPS_INVALID_ANGLE ? GPS_INVALID_F_ANGLE : (lon / 1000000.0);
 }
 
-void crack_datetime(int *year, byte *month, byte *day, 
+void tinygps_crack_datetime(int *year, byte *month, byte *day, 
   byte *hour, byte *minute, byte *second, byte *hundredths, unsigned long *age)
 {
   unsigned long date, time;
-  get_datetime(&date, &time, age);
+  tinygps_get_datetime(&date, &time, age);
   if (year) 
   {
     *year = date % 100;
@@ -430,51 +430,51 @@ void crack_datetime(int *year, byte *month, byte *day,
   if (hundredths) *hundredths = time % 100;
 }
 
-float f_altitude()    
+float tinygps_f_altitude()    
 {
-  return _altitude == GPS_INVALID_ALTITUDE ? GPS_INVALID_F_ALTITUDE : _altitude / 100.0;
+  return _altitude == GPS_INVALID_ALTITUDE ? GPS_INVALID_F_ALTITUDE : _altitude / 100.0f;
 }
 
-float f_course()
+float tinygps_f_course()
 {
-  return _course == GPS_INVALID_ANGLE ? GPS_INVALID_F_ANGLE : _course / 100.0;
+  return _course == GPS_INVALID_ANGLE ? GPS_INVALID_F_ANGLE : _course / 100.0f;
 }
 
-float f_speed_knots() 
+float tinygps_f_speed_knots() 
 {
-  return _speed == GPS_INVALID_SPEED ? GPS_INVALID_F_SPEED : _speed / 100.0;
+  return _speed == GPS_INVALID_SPEED ? GPS_INVALID_F_SPEED : _speed / 100.0f;
 }
 
-float f_speed_mph()   
+float tinygps_f_speed_mph()   
 { 
-  float sk = f_speed_knots();
-  return sk == GPS_INVALID_F_SPEED ? GPS_INVALID_F_SPEED : _GPS_MPH_PER_KNOT * sk; 
+  float sk = tinygps_f_speed_knots();
+  return (float)sk == GPS_INVALID_F_SPEED ? GPS_INVALID_F_SPEED : _GPS_MPH_PER_KNOT * sk; 
 }
 
-float f_speed_mps()   
+float tinygps_f_speed_mps()   
 { 
-  float sk = f_speed_knots();
-  return sk == GPS_INVALID_F_SPEED ? GPS_INVALID_F_SPEED : _GPS_MPS_PER_KNOT * sk; 
+  float sk = tinygps_f_speed_knots();
+  return (float)sk == GPS_INVALID_F_SPEED ? GPS_INVALID_F_SPEED : _GPS_MPS_PER_KNOT * sk; 
 }
 
-float f_speed_kmph()  
+float tinygps_f_speed_kmph()  
 { 
-  float sk = f_speed_knots();
-  return sk == GPS_INVALID_F_SPEED ? GPS_INVALID_F_SPEED : _GPS_KMPH_PER_KNOT * sk; 
+  float sk = tinygps_f_speed_knots();
+  return (float)sk == GPS_INVALID_F_SPEED ? GPS_INVALID_F_SPEED : _GPS_KMPH_PER_KNOT * sk; 
 }
 
 // signed altitude in centimeters (from GPGGA sentence)
-long altitude() { return _altitude; }
+long tinygps_altitude() { return _altitude; }
 
   // course in last full GPRMC sentence in 100th of a degree
-unsigned long course() { return _course; }
+unsigned long tinygps_course() { return _course; }
 
   // speed in last full GPRMC sentence in 100ths of a knot
-unsigned long speed() { return _speed; }
+unsigned long tinygps_speed() { return _speed; }
 
   // satellites used in last full GPGGA sentence
-unsigned short satellites() { return _numsats; }
+unsigned short tinygps_satellites() { return _numsats; }
 
   // horizontal dilution of precision in 100ths
-unsigned long hdop() { return _hdop; }
+unsigned long tinygps_hdop() { return _hdop; }
 

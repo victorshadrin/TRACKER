@@ -529,6 +529,36 @@
               <FileType>5</FileType>
               <FilePath>..\Inc\main.h</FilePath>
             </File>
+            <File>
+              <FileName>eeprom.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\eeprom.c</FilePath>
+            </File>
+            <File>
+              <FileName>eeprom.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Src\eeprom.h</FilePath>
+            </File>
+            <File>
+              <FileName>tinygps.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\tinygps.c</FilePath>
+            </File>
+            <File>
+              <FileName>tinygps.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Src\tinygps.h</FilePath>
+            </File>
+            <File>
+              <FileName>gpsmodule.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\gpsmodule.h</FilePath>
+            </File>
+            <File>
+              <FileName>gpsmodule.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\gpsmodule.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

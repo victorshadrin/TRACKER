@@ -22,6 +22,9 @@
 "tracker\power_button.o"
 "tracker\program.o"
 "tracker\sleepmode.o"
+"tracker\eeprom.o"
+"tracker\tinygps.o"
+"tracker\gpsmodule.o"
 "tracker\startup_stm32f302xc.o"
 --library_type=microlib --strict --scatter "TRACKER\TRACKER.sct"
 --diag_suppress=L6329 --summary_stderr --info summarysizes --map --xref --callgraph --symbols

@@ -588,8 +588,8 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr.h)(0x58AECC64)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr_ex.h)(0x58AECC64)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x58AECC65)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x58AECC65)
-I (../Src/uart_printf.h)(0x591715B9)
-I (../Src/program.h)(0x59187D19)
+I (../Src/uart_printf.h)(0x5919FD3E)
+I (../Src/program.h)(0x592F2048)
 I (../Src/power_button.h)(0x59188052)
 F (../Src/stm32f3xx_it.c)(0x591874DC)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include --C99-IC:\projects\stm32\TRACKER\MDK-ARM\RTE\_TRACKER-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F3xx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F302xC -DUSE_HAL_DRIVER -DSTM32F302xC-o tracker\stm32f3xx_it.o --omf_browse tracker\stm32f3xx_it.crf --depend tracker\stm32f3xx_it.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x58AECC64)
@@ -623,7 +623,7 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr_ex.h)(0x58AECC64)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x58AECC65)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x58AECC65)
 I (../Inc/stm32f3xx_it.h)(0x591874DC)
-F (..\Src\uart_printf.h)(0x591715B9)()
+F (..\Src\uart_printf.h)(0x5919FD3E)()
 F (..\Src\power_button.h)(0x59188052)()
 F (..\Src\power_button.c)(0x59188046)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include --C99-IC:\projects\stm32\TRACKER\MDK-ARM\RTE\_TRACKER-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F3xx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F302xC -DUSE_HAL_DRIVER -DSTM32F302xC-o tracker\power_button.o --omf_browse tracker\power_button.crf --depend tracker\power_button.d)
 I (..\Src\power_button.h)(0x59188052)
@@ -657,9 +657,9 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr.h)(0x58AECC64)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr_ex.h)(0x58AECC64)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x58AECC65)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x58AECC65)
-F (..\Src\program.h)(0x59187D19)()
-F (..\Src\program.c)(0x591882A2)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include --C99-IC:\projects\stm32\TRACKER\MDK-ARM\RTE\_TRACKER-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F3xx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F302xC -DUSE_HAL_DRIVER -DSTM32F302xC-o tracker\program.o --omf_browse tracker\program.crf --depend tracker\program.d)
-I (..\Src\program.h)(0x59187D19)
+F (..\Src\program.h)(0x592F2048)()
+F (..\Src\program.c)(0x592F2045)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include --C99-IC:\projects\stm32\TRACKER\MDK-ARM\RTE\_TRACKER-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F3xx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F302xC -DUSE_HAL_DRIVER -DSTM32F302xC-o tracker\program.o --omf_browse tracker\program.crf --depend tracker\program.d)
+I (..\Src\program.h)(0x592F2048)
 I (../Inc/main.h)(0x591874DD)
 I (..\Src\power_button.h)(0x59188052)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x58AECC64)
@@ -692,8 +692,13 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr_ex.h)(0x58AECC64)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x58AECC65)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x58AECC65)
 I (..\Src\sleepmode.h)(0x5917379C)
+I (..\Src\eeprom.h)(0x5924918A)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x57F64D08)
+I (..\Src\tinygps.h)(0x592F1F1C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F64D08)
+I (..\Src\gpsmodule.h)(0x592F2048)
 F (..\Src\sleepmode.h)(0x5917379C)()
-F (..\Src\sleepmode.c)(0x59186732)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include --C99-IC:\projects\stm32\TRACKER\MDK-ARM\RTE\_TRACKER-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F3xx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F302xC -DUSE_HAL_DRIVER -DSTM32F302xC-o tracker\sleepmode.o --omf_browse tracker\sleepmode.crf --depend tracker\sleepmode.d)
+F (..\Src\sleepmode.c)(0x5919F4FE)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include --C99-IC:\projects\stm32\TRACKER\MDK-ARM\RTE\_TRACKER-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F3xx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F302xC -DUSE_HAL_DRIVER -DSTM32F302xC-o tracker\sleepmode.o --omf_browse tracker\sleepmode.crf --depend tracker\sleepmode.d)
 I (..\Src\sleepmode.h)(0x5917379C)
 I (../Inc/main.h)(0x591874DD)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x58AECC64)
@@ -727,4 +732,78 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x58AECC65)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x58AECC65)
 I (..\Src\power_button.h)(0x59188052)
 F (..\Inc\main.h)(0x591874DD)()
+F (..\Src\eeprom.c)(0x58B474B7)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include --C99-IC:\projects\stm32\TRACKER\MDK-ARM\RTE\_TRACKER-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F3xx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F302xC -DUSE_HAL_DRIVER -DSTM32F302xC-o tracker\eeprom.o --omf_browse tracker\eeprom.crf --depend tracker\eeprom.d)
+I (..\Src\eeprom.h)(0x5924918A)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x58AECC64)
+I (../Inc/stm32f3xx_hal_conf.h)(0x591874DC)
+I (../Inc/main.h)(0x591874DD)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x58AECC64)
+I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x58AECBF2)
+I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f302xc.h)(0x58AECBF1)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x58AECC61)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F64D08)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x58AECC62)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x58AECC61)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x58AECC62)
+I (../Drivers/CMSIS/Include/core_cmSimd.h)(0x58AECC62)
+I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/system_stm32f3xx.h)(0x58AECBF2)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x58AECC64)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F64D08)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc_ex.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_gpio.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_gpio_ex.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_dma.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_dma_ex.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_cortex.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash_ex.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_i2c.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_i2c_ex.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr_ex.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x58AECC65)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x58AECC65)
+F (..\Src\eeprom.h)(0x5924918A)()
+F (..\Src\tinygps.c)(0x591B4E89)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include --C99-IC:\projects\stm32\TRACKER\MDK-ARM\RTE\_TRACKER-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F3xx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F302xC -DUSE_HAL_DRIVER -DSTM32F302xC-o tracker\tinygps.o --omf_browse tracker\tinygps.crf --depend tracker\tinygps.d)
+I (..\Src\TinyGPS.h)(0x592F1F1C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x57F64D08)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x57F64D06)
+F (..\Src\tinygps.h)(0x592F1F1C)()
+F (..\src\gpsmodule.h)(0x592F2048)()
+F (..\src\gpsmodule.c)(0x592F207C)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include --C99-IC:\projects\stm32\TRACKER\MDK-ARM\RTE\_TRACKER-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F3xx_DFP\1.3.0\Device\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F302xC -DUSE_HAL_DRIVER -DSTM32F302xC-o tracker\gpsmodule.o --omf_browse tracker\gpsmodule.crf --depend tracker\gpsmodule.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F64D08)
+I (..\src\gpsmodule.h)(0x592F2048)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x58AECC64)
+I (../Inc/stm32f3xx_hal_conf.h)(0x591874DC)
+I (../Inc/main.h)(0x591874DD)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x58AECC64)
+I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x58AECBF2)
+I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f302xc.h)(0x58AECBF1)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x58AECC61)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x57F64D08)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x58AECC62)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x58AECC61)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x58AECC62)
+I (../Drivers/CMSIS/Include/core_cmSimd.h)(0x58AECC62)
+I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/system_stm32f3xx.h)(0x58AECBF2)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc_ex.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_gpio.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_gpio_ex.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_dma.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_dma_ex.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_cortex.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash_ex.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_i2c.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_i2c_ex.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr_ex.h)(0x58AECC64)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x58AECC65)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x58AECC65)
+I (..\src\eeprom.h)(0x5924918A)
+I (..\src\program.h)(0x592F2048)
+I (..\src\power_button.h)(0x59188052)
 F (startup_stm32f302xc.s)(0x591874E2)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1"-IC:\projects\stm32\TRACKER\MDK-ARM\RTE\_TRACKER-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F3xx_DFP\1.3.0\Device\Include--pd "__UVISION_VERSION SETA 522" --pd "_RTE_ SETA 1" --pd "STM32F302xC SETA 1"--list startup_stm32f302xc.lst --xref -o tracker\startup_stm32f302xc.o --depend tracker\startup_stm32f302xc.d)
